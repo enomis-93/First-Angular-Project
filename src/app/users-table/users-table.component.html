@@ -8,6 +8,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr></tr>
-  </tbody>
+    <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.surname}}</td>
+        <td>{{user.gender}}</td>
+        <td>{{user.age}}</td>
+    </tr>
+</tbody>
 </table>
