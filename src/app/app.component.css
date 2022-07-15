@@ -1,0 +1,9 @@
+app-users-table {
+  display: flex;
+  justify-content: center;
+}
+
+app-quote-box {
+  width: 80%;
+  margin: 1em;
+}
