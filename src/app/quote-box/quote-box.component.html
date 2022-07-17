@@ -1,5 +1,7 @@
-<div class="quoteBox">
+<button (click)="showBox()">Show box</button>
+<div class="quoteBox" *ngIf="!boxHide">
   <blockquote>
-    Fa più rumore un albero che cade in una foresta che cresce (Lao Tzu)
+    {{ quote || "Loading..." }}
+    <button (click)="getRandomQuote()">Generate a new quote</button>
   </blockquote>
 </div>
