@@ -9,9 +9,9 @@ import { UserService } from '../services/user.service';
 })
 export class UsersTableComponent implements OnInit {
   public users: User[] = [];
-  constructor(private service: UserService) {}
+  constructor(private UserService: UserService) {}
 
   ngOnInit(): void {
-    this.users = this.service.getUser();
+    this.users = this.UserService.getUsers();
   }
 }

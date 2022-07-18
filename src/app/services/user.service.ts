@@ -39,7 +39,7 @@ export class UserService {
   ];
   constructor() {}
 
-  getUser() {
+  getUsers() {
     return this.users;
   }
 }

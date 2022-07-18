@@ -1,7 +1,9 @@
-<button (click)="showBox()">Show box</button>
+<button (click)="showQuoteBox()">
+  {{ boxHide ? "Show quote box" : "Hide quote box" }}
+</button>
 <div class="quoteBox" *ngIf="!boxHide">
   <blockquote>
     {{ quote || "Loading..." }}
-    <button (click)="getRandomQuote()">Generate a new quote</button>
+    <button (click)="getRandomQuote()">Generate new quote</button>
   </blockquote>
 </div>
