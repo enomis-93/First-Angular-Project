@@ -1,0 +1,23 @@
+form {
+  margin: 2em auto;
+  width: 30%;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.save-btn {
+  display: block;
+  margin: 1em auto;
+  background-color: green;
+  color: white;
+  padding: 1em;
+  border: white 1px solid;
+  border-radius: 10px;
+  cursor: pointer;
+}

@@ -14,7 +14,8 @@ export class QuoteBoxComponent implements OnInit {
   ngOnInit(): void {}
 
   showQuoteBox(): void {
-    if (!this.boxHide) {
+    if (this.boxHide) {
+      this.quote = '';
       this.getRandomQuote();
     }
     this.boxHide = !this.boxHide;
@@ -35,13 +36,11 @@ export class QuoteBoxComponent implements OnInit {
     )
       .then((response) => response.json())
       .then((response) => {
-        if (response) {
-          console.log(response);
-          this.quote = `
+        console.log(response);
+        this.quote = `
           "${response.content}" 
           (${response.originator.name})
         `;
-        }
       })
       .catch((err) => console.error(err));
   }

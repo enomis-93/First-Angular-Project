@@ -5,18 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersTableComponent } from './users-table/users-table.component';
 import { QuoteBoxComponent } from './quote-box/quote-box.component';
+import { UserComponent } from './user/user.component';
+import { FormsModule } from '@angular/forms';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersTableComponent,
-    QuoteBoxComponent
+    QuoteBoxComponent,
+    UserComponent,
+    UserDetailComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

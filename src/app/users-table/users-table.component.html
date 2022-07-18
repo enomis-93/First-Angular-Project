@@ -5,14 +5,18 @@
       <th>Surname</th>
       <th>Gender</th>
       <th>Age</th>
+      <th colspan="2">Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users">
-        <td>{{user.name}}</td>
-        <td>{{user.surname}}</td>
-        <td>{{user.gender}}</td>
-        <td>{{user.age}}</td>
-    </tr>
-</tbody>
+    <!-- Si possono inglobare più componenti in questo modo?  -->
+    <!-- onDeleteUser viene invocato solo quando il componente figlio emette l'evento "onDeleteUser" -->
+    <tr
+      *ngFor="let user of users"
+      (onDeleteUser)="onDeleteUser(user)"
+      (onSelectUser)="onSelectUser(user)"
+      app-user
+      [user-data]="user"
+    ></tr>
+  </tbody>
 </table>

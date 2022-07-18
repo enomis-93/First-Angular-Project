@@ -1,2 +1,7 @@
-<app-users-table></app-users-table>
+<div>
+  <app-users-table (updateUser)="updateUser($event)"></app-users-table>
+  <div *ngIf="showForm">
+    <app-user-detail [user]="userSelected"></app-user-detail>
+  </div>
+</div>
 <app-quote-box></app-quote-box>

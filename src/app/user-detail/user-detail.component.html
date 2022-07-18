@@ -1,0 +1,21 @@
+<!-- {{ user | json }} -->
+
+<form action="">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input [(ngModel)]="user.name" type="text" id="name" name="name" />
+  </div>
+  <div class="form-group">
+    <label for="surname">Surname</label>
+    <input [(ngModel)]="user.surname" type="text" id="surname" name="surname" />
+  </div>
+  <div class="form-group">
+    <label for="gender">Gender</label>
+    <input [(ngModel)]="user.gender" type="text" id="gender" name="gender" />
+  </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input [(ngModel)]="user.age" type="number" id="age" name="age" />
+  </div>
+  <button class="save-btn" (click)="saveUser()">Save</button>
+</form>

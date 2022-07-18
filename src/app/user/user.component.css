@@ -1,0 +1,22 @@
+td {
+  border: 1px solid black;
+  padding: 0.5em;
+}
+
+button.btn-delete {
+  padding: 0.5em;
+  background-color: red;
+  border-radius: 10px;
+  color: white;
+  border: white;
+  cursor: pointer;
+}
+
+button.btn-update {
+  padding: 0.5em;
+  background-color: rgb(0, 174, 255);
+  border-radius: 10px;
+  color: white;
+  border: white;
+  cursor: pointer;
+}

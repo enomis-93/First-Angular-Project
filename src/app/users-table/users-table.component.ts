@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { User } from '../classes/user';
 import { UserService } from '../services/user.service';
 
@@ -9,9 +9,27 @@ import { UserService } from '../services/user.service';
 })
 export class UsersTableComponent implements OnInit {
   public users: User[] = [];
+
+  @Output() updateUser = new EventEmitter();
   constructor(private UserService: UserService) {}
 
   ngOnInit(): void {
     this.users = this.UserService.getUsers();
+  }
+
+  onDeleteUser(user: User) {
+    let confirmDelete = confirm(
+      `Vuoi proseguire con l'elimazione dell'utente "${
+        user.name + ' ' + user.surname
+      }" ?`
+    );
+    if (confirmDelete) {
+      this.UserService.deleteUser(user);
+    }
+  }
+
+  onSelectUser(user: User) {
+    const userCopy = Object.assign({}, user);
+    this.updateUser.emit(userCopy);
   }
 }
