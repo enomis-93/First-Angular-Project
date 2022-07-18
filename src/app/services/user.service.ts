@@ -48,7 +48,7 @@ export class UserService {
     return this.users;
   }
 
-  deleteUser(user: User) {
+  deleteUser(user: User): void {
     const index = this.users.indexOf(user);
     if (index > -1) {
       this.users.splice(index, 1);
@@ -56,12 +56,14 @@ export class UserService {
   }
 
   // Aggiorna dati dell'utente
-  updateUser(user: User) {
+  updateUser(user: User): void {
     let userIndex = this.users.findIndex((u) => u.id == user.id);
     if (userIndex != -1) {
       this.users[userIndex] = { ...user };
     }
   }
 
-  addUser(user: User) {}
+  addUser(user: User): void {
+    this.users.push(user);
+  }
 }

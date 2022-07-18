@@ -11,6 +11,7 @@ export class UsersTableComponent implements OnInit {
   public users: User[] = [];
 
   @Output() updateUser = new EventEmitter();
+  @Output() addNewUser = new EventEmitter();
   constructor(private UserService: UserService) {}
 
   ngOnInit(): void {
@@ -31,5 +32,9 @@ export class UsersTableComponent implements OnInit {
   onSelectUser(user: User) {
     const userCopy = Object.assign({}, user);
     this.updateUser.emit(userCopy);
+  }
+
+  onAddNewUser() {
+    this.addNewUser.emit();
   }
 }

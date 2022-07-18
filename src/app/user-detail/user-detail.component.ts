@@ -15,8 +15,10 @@ export class UserDetailComponent implements OnInit {
   ngOnInit(): void {}
 
   saveUser() {
-    if (this.user.name) {
+    if (this.user.id > 0) {
       this.userService.updateUser(this.user);
+    } else {
+      this.userService.addUser(this.user);
     }
   }
 }

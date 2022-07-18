@@ -1,7 +1,15 @@
 <div>
-  <app-users-table (updateUser)="updateUser($event)"></app-users-table>
+  <div>
+    <!-- Tabella utenti -->
+    <app-users-table
+      (updateUser)="updateUser($event)"
+      (addNewUser)="addNewUser()"
+    ></app-users-table>
+  </div>
+  <!-- Form per creazione e aggiornamento utente -->
   <div *ngIf="showForm">
     <app-user-detail [user]="userSelected"></app-user-detail>
   </div>
 </div>
+<!-- Quote box -->
 <app-quote-box></app-quote-box>
